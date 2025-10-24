@@ -32,7 +32,7 @@ function Root() {
     darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')
   }, [darkMode])
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 10)
 
   useEffect(() => {
     const handleResize = () => {
@@ -49,7 +49,7 @@ function Root() {
 
   return (
     <React.StrictMode>
-      <BrowserRouter basename={REACT_APP_DEPLOY_ENV === 'pages' ? '/qwerty-learner' : ''}>
+      <BrowserRouter basename="/qwerty-learner">
         <Suspense fallback={<Loading />}>
           <Routes>
             {isMobile ? (
